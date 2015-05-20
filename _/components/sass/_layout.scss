@@ -1,0 +1,191 @@
+//Susy setup ----------------------------------------
+$total-columns : 12;
+$column-width :4em;
+$gutter-width :1em;
+$grid-padding : $gutter-width;
+
+@include border-box-sizing;
+
+$small : 32em;
+$medium : 47em;
+$large : 75em;
+
+//Content ------------------------
+
+#home {
+	height: 500px;
+	@include background(linear-gradient(top left, rgba($darkerblue, 0.9), rgba($darkerblue, 0.5)),image-url('hero.jpg'));
+	#spacer{
+		@include span-columns(1,12);
+		height: 200px;
+	}
+	#home-content {
+		@include span-columns(10,12);
+		position: absolute;
+		top: 50%;
+		line-height: 100%;
+		height: 100%;
+		margin-top: -250px;
+		margin-left: auto;
+		color: $white;
+		#name-plate h1{
+			font-size: 5rem;
+			line-height: 100%;
+		}
+		#name-title {
+
+			font-size: 2rem;
+		}
+	} //#home-content
+} //#home
+
+.container {
+	padding: 70px 100px 0 100px;
+	h1{
+		margin-bottom: 50px;
+	}
+	.content{
+	}
+} //Content layout
+
+#about {
+	background: $darkgray;
+
+} //#about
+
+#portfolio {
+		height: auto;
+		background: $mediumgray;
+
+	.content{
+
+		img {
+			width: 100%;
+
+			@include at-breakpoint($medium){
+				margin-top: 50px;
+				margin-bottom: 50px;
+			}
+		}
+		p {
+		}
+		.left-column {
+			@include span-columns(12,12);
+			@include at-breakpoint($medium){
+				@include span-columns(6,12);
+				padding-right: 50px;
+				img {
+					margin-bottom: 10px;
+				}
+			} //medium
+		} //left column
+		.right-column {
+			margin-top: 50px;
+			margin-bottom: 50px;
+			@include span-columns(12,12);
+			@include at-breakpoint($medium){
+				@include span-columns(6 omega,12);
+				padding-left: 50px;
+				img {
+					margin-top: 10px;
+				}
+			} //medium
+		} //.right column
+	} //.content
+} //#portfolio
+
+#skills {
+	background: $darkgray;
+} //#skills
+
+#contact {
+	background: $mediumgray;
+
+} //#contact
+
+
+.viewing h1, .viewing h2{
+	color: $lightblue;
+}
+
+//Navigation -------------------------------------
+
+#navigation {
+	z-index: 3;
+	position: fixed;
+	width: 100%;
+	top: 0;
+	background: none;
+	text-shadow: 1px 1px #000;
+	#nav-bg{
+		z-index: -1;
+		opacity: 0;
+		width: 100%;
+		height: 100%;
+		display: block;
+		position: absolute;
+		//@include background(linear-gradient(right, rgba($darkerblue, 1), rgba($darkerblue, 0.1)));
+		background: rgba(255,255,255,0.1);
+		@include single-transition(opacity, 0.5s, ease-out);
+	}
+	&.scrolled{
+		margin-top: 0;
+		top: 0;
+		//background: rgba(255,255,255,0.1);
+		height: 56px;
+		text-shadow: 0px 0px #000;
+		#nav-bg{
+			opacity: 1;
+		}
+	}
+	.layout {
+
+		margin: 50px auto 0;
+		@include single-transition(all, 0.2s, ease-out);
+		@include at-breakpoint($medium) {
+			@include span-columns(10,12);
+			}
+		@include span-columns(12,12);
+		&.loose {
+			padding-top: 8px;
+			margin: 0px auto 0;
+		}
+		ul.nav {
+			float: right;
+			@include at-breakpoint($small) {
+				@include horizontal-list;
+			}
+			li {
+				span{
+					color: $white;
+					padding-right: 0.5em;
+					cursor: pointer;
+				}
+
+				span {
+					@include single-transition(all, 0.3s, ease-out);
+					display: block;
+					text-decoration: none;
+					padding: 5px 10px;
+					color: $white;
+
+					&:hover {
+						color: $lightblue;
+						span {
+							color: $white;
+						} //a
+					} //a:hover
+				} //a
+			} //li
+		} //ul.nav
+	} //layout
+} //navigation
+
+//footer -------------------------------------
+
+footer {
+	color: $white;
+	background: $darkgray;
+	padding-top: 20px;
+	padding-bottom: 100px;
+}
