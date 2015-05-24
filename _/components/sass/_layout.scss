@@ -10,113 +10,21 @@ $small : 32em;
 $medium : 47em;
 $large : 75em;
 
-//Content ------------------------
-
-#home {
-	height: 500px;
-	@include background(linear-gradient(top left, rgba($darkerblue, 0.9), rgba($darkerblue, 0.5)),image-url('hero.jpg'));
-	#spacer{
-		@include span-columns(1,12);
-		height: 200px;
-	}
-	#home-content {
-		@include span-columns(10,12);
-		position: absolute;
-		top: 50%;
-		line-height: 100%;
-		height: 100%;
-		margin-top: -250px;
-		margin-left: auto;
-		color: $white;
-		#name-plate h1{
-			font-size: 5rem;
-			line-height: 100%;
-		}
-		#name-title {
-
-			font-size: 2rem;
-		}
-	} //#home-content
-} //#home
-
-.container {
-	padding: 70px 100px 0 100px;
-	h1{
-		margin-bottom: 50px;
-	}
-	.content{
-	}
-} //Content layout
-
-#about {
-	background: $darkgray;
-
-} //#about
-
-#portfolio {
-		height: auto;
-		background: $mediumgray;
-
-	.content{
-
-		img {
-			width: 100%;
-
-			@include at-breakpoint($medium){
-				margin-top: 50px;
-				margin-bottom: 50px;
-			}
-		}
-		p {
-		}
-		.left-column {
-			@include span-columns(12,12);
-			@include at-breakpoint($medium){
-				@include span-columns(6,12);
-				padding-right: 50px;
-				img {
-					margin-bottom: 10px;
-				}
-			} //medium
-		} //left column
-		.right-column {
-			margin-top: 50px;
-			margin-bottom: 50px;
-			@include span-columns(12,12);
-			@include at-breakpoint($medium){
-				@include span-columns(6 omega,12);
-				padding-left: 50px;
-				img {
-					margin-top: 10px;
-				}
-			} //medium
-		} //.right column
-	} //.content
-} //#portfolio
-
-#skills {
-	background: $darkgray;
-} //#skills
-
-#contact {
-	background: $mediumgray;
-
-} //#contact
-
-
-.viewing h1, .viewing h2{
-	color: $lightblue;
-}
-
-//Navigation -------------------------------------
+//Navigation ----------------------------------------------------
 
 #navigation {
 	z-index: 3;
 	position: fixed;
-	width: 100%;
-	top: 0;
+	right: 0;
+	width: 84px;
+	height: 100%;
 	background: none;
 	text-shadow: 1px 1px #000;
+
+	@include at-breakpoint($small) {
+		width: 100%;
+		top: 0;
+	}
 	#nav-bg{
 		z-index: -1;
 		opacity: 0;
@@ -132,7 +40,10 @@ $large : 75em;
 		margin-top: 0;
 		top: 0;
 		//background: rgba(255,255,255,0.1);
-		height: 56px;
+		height: 100%;
+		@include at-breakpoint($small) {
+			height: 56px;
+		}
 		text-shadow: 0px 0px #000;
 		#nav-bg{
 			opacity: 1;
@@ -144,7 +55,7 @@ $large : 75em;
 		@include single-transition(all, 0.2s, ease-out);
 		@include at-breakpoint($medium) {
 			@include span-columns(10,12);
-			}
+		}
 		@include span-columns(12,12);
 		&.loose {
 			padding-top: 8px;
@@ -152,6 +63,8 @@ $large : 75em;
 		}
 		ul.nav {
 			float: right;
+			@include animation(fade-left 1s ease-out);
+			
 			@include at-breakpoint($small) {
 				@include horizontal-list;
 			}
@@ -181,11 +94,305 @@ $large : 75em;
 	} //layout
 } //navigation
 
-//footer -------------------------------------
+//Content ------------------------------------------
+
+#home {
+	height: 500px;
+	@include background(linear-gradient(top left, rgba($darkerblue, 0.9), rgba($darkerblue, 0.5)),image-url('hero.jpg'));
+	#spacer{
+		@include span-columns(1,12);
+		height: 200px;
+	}
+	#home-content {
+		@include span-columns(10,12);
+		position: absolute;
+		top: 100px;
+		width: 300px;
+		line-height: 100%;
+		margin-left: auto;
+		color: $white;
+
+		@include transition(top 0.3s ease-out);
+
+		@include at-breakpoint($small){
+			width: auto;
+		}
+		@include at-breakpoint($medium){
+			top: 200px;
+		}
+		
+		#name-plate h1{
+			font-size: 5rem;
+			line-height: 100%;
+			/* @keyframes name | duration | timing-function | delay | iteration-count | direction | fill-mode | play-state */
+			@include animation(fade-down 1s ease-out);
+		}
+		#name-title {
+			font-size: 2rem;
+			@include animation(fade-right 1s ease-out);
+		}
+	} //#home-content
+} //#home
+
+.container {
+	padding: 70px 100px 0 10px;
+
+	@include at-breakpoint($small){
+		padding: 50px 50px 0 50px;
+		@include at-breakpoint($medium){
+			padding: 70px 100px 0 100px;
+		}
+	}
+
+	h1{
+		margin-bottom: 50px;
+	}
+	&:hover {
+		h1 {
+			color: $lightblue;
+		}
+	} //&:hover
+} //Content layout
+
+#about {
+	background: $darkgray;
+	p{
+		@include animation(fade-right 1s ease-out forwards);
+	}
+
+} //#about
+
+#portfolio {
+	height: auto;
+	background: $mediumgray;
+
+	.content{
+
+		.panel-middle-left {
+			margin-top: 50px;
+		}
+
+		.panel-middle-right {
+			margin-top: 50px;
+			margin-bottom: 50px;
+		}
+		a {
+			@include at-breakpoint($medium){
+				margin-top: 50px;
+				margin-bottom: 50px;
+
+			} //breakpoint medium
+
+		}
+		img {
+			width: 100%;
+			clip-path: polygon (50% 0%, 0% 100%, 100% 100%);
+
+
+
+			&:hover {
+
+			} //hover
+		} //img
+		.left-column {
+			margin-top: 10px;
+			opacity: 0;
+			@include span-columns(12,12);
+			@include at-breakpoint($medium){
+				@include span-columns(6,12);
+				padding-right: 50px;
+				img {
+					margin-bottom: 10px;
+				}
+			} //medium
+			.port-panel {
+				h2 {
+					top: 10%;
+				} //h2
+			} //.port-panel
+		} //left column
+		.right-column {
+			margin-top: 10px;
+			opacity: 0;
+			margin-bottom: 50px;
+			@include span-columns(12,12);
+			@include at-breakpoint($medium){
+				@include span-columns(6 omega,12);
+				padding-left: 50px;
+				img {
+					margin-top: 10px;
+				}
+			} //medium
+			.port-panel {
+				h2 {
+					bottom: 10%;
+				} //h2
+			} //.port-panel
+		} //.right column
+
+		.port-panel {
+			position: relative;
+			height: 100%;
+			display: block;
+			h2 {
+				position: absolute; 
+				left: 0; 
+				font: bold 24px/45px Helvetica, Sans-Serif; 
+				letter-spacing: -1px;  
+				background: rgb(0, 0, 0); /* fallback color */
+				background: rgba(0, 0, 0, 0.7);
+				padding: 10px;
+				@include transition(opacity 0.5s ease-out);
+
+				@include at-breakpoint($medium) {
+					opacity: 0;
+				} //medium
+			} //h2
+			p {
+				@include transition(opacity 0.5s ease-out 0.2s);
+
+				@include at-breakpoint($medium) {
+					opacity: 0;
+				} //medium
+			} //p
+			&:hover {
+				h2, p {
+					opacity: 1;
+				} //h2, p
+			} //&:hover
+		} //.port-panel
+	} //.content
+
+	&.animate {
+		.left-column {
+
+			@include animation(fade-right 1s ease-out forwards);
+		}
+		.right-column {
+
+			@include animation(fade-left 1s ease-out 1s forwards);
+		}
+	} //&.animate
+} //#portfolio
+
+#skills {
+	background: $darkgray;
+	padding-bottom: 100px;
+	.content{
+		.skill-list {
+			opacity: 0;
+			ul>li{
+				@include single-transition(color 0.3s ease-out);
+			} //ul>li
+		} //.skill-list
+
+		#web-skills{
+			padding-left: 30px;
+			@include at-breakpoint($small) {
+				padding-left: 0;
+				@include span-columns(6,12);
+			}
+			@include at-breakpoint($medium) {
+				@include span-columns(4,12);
+			}
+		} //#web-skills
+		#programming-skills{
+			margin-top: 30px;
+			padding-left: 30px;
+			@include at-breakpoint($small) {
+				margin-top: 0;
+				padding-left: 0;
+				@include span-columns(6 omega,12);
+			}
+			@include at-breakpoint($medium) {
+				@include span-columns(4,12);
+			}
+		} //#programming-skills
+		#other-skills{
+			margin-top: 30px;
+			padding-left: 30px;
+			@include at-breakpoint($small) {
+				padding-left: 0;
+				@include span-columns(6,12);
+			} //small
+			@include at-breakpoint($medium) {
+				margin-top: 0;
+				@include span-columns(4 omega,12);
+			} //medium
+		} //#other-skills
+	} //.content
+
+	&.animate {
+		.skill-list {
+			&:hover {
+				h2 {
+					color: $lightblue;
+				} //h2
+				ul>li{
+					color: $white;
+				} //ul
+			} //&:hover
+		} //.skill-list
+		#web-skills{
+			@include animation(fade-right 1s ease-out forwards);
+		}
+		#programming-skills{
+			@include animation(fade-down 1s ease-out forwards);
+		}
+		#other-skills{
+			@include animation(fade-left 1s ease-out forwards);
+		}
+	} //&.animate
+} //#skills
+
+#contact {
+	background: $mediumgray;
+	padding-bottom: 100px;
+	p {
+		opacity: 0;
+	}
+
+	&.animate {
+		p {
+			
+			@include animation(fade-right 1s ease-out forwards);
+		}
+	} //&.animate
+} //#contact
+
+
+//footer -----------------------------------------------------------------
 
 footer {
-	color: $white;
-	background: $darkgray;
-	padding-top: 20px;
-	padding-bottom: 100px;
+	color: darken($lightgray, 30);
+	background: $mediumgray;
+	font-size: 0.8rem;
+	padding-left: 10px;
+	padding-bottom: 5px;
+}
+
+@include keyframes(color) {
+	from {background: red;}
+	to {background: yellow;}
+	
+}
+@include keyframes(fade-left) {
+	from {transform: translate(5em,0); opacity: 0;}
+	to {transform: translate(0,0); opacity: 1;}
+}
+@include keyframes(fade-right) {
+	from {transform: translate(-5em,0); opacity: 0;}
+	to {transform: translate(0,0); opacity: 1;}
+}
+@include keyframes(fade-up) {
+	from {transform: translate(0,1em); opacity: 0;}
+	to {transform: translate(0,0); opacity: 1;}
+}
+@include keyframes(fade-down) {
+	from {transform: translate(0,-1em); opacity: 0;}
+	to {transform: translate(0,0); opacity: 1;}
+}
+@include keyframes(glow-white) {
+	from {color: inherit;}
+	to {color: $white;}
 }

@@ -8,6 +8,7 @@
 	<title>Thomas Moon Kang</title>
 	<link rel="stylesheet" href="_/css/styles.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
 </head>
 <body>
 	<header>
@@ -17,8 +18,8 @@
 					<li><span id="home-btn" class="section-link">Home</span></li>
 					<li><span id="about-btn" class="section-link">About</span></li>
 					<li><span id="portfolio-btn" class="section-link">Portfolio</span></li>
-					<li><span id="resume-btn" class="section-link">Resume</span></li>
-					<li><span id="experience-btn" class="section-link">Experience</span></li>
+					<li><span id="resume-btn" class="section-link">Skills</span></li>
+					<li><span id="experience-btn" class="section-link">Contact</span></li>
 				</ul>
 			</div> <!-- layout -->
 			<span id="nav-bg"></span>
@@ -34,9 +35,10 @@
 	<section id="about" class="container">
 		<div class="content">
 			<h1>ABOUT</h1>
+			<p>
 			Hi, my name is Thomas Kang, and I love design. 
 			<br> I started out designing with K-nex and drawing, then video editing, music creation, game development, and now web design.
-			<br>Right now, I'm a senior at Rutgers University.
+			<br>Right now, I'm a senior at Rutgers University.</p>
 			
 		</div>	<!-- content -->
 		<br class="clear">
@@ -45,23 +47,39 @@
 		<div class="content">
 			<h1>PORTFOLIO</h1>
 			<div class="left-column">
-				<a href="http://twitter.com"><img src="images/colorwallss.png" alt="Colorwall"></a>
-				<h2>COLORWALL</h2>
+
+				<span class="port-panel panel-top-left">
+				<a target="_blank" href="http://thomasmoonkang.com/bookexchange"><img id="book-img" src="images/bookexchange.png" alt="Book Exchange"></a>
+				<h2>Book Exchange</h2>
+				<p>A website made to allow people to exchange books online, makes use of SQL databases and PHP scripts for account systems dynamic search results. Created as a Web Design group project with Matt Kaiser, and Madan Kumar.</p>
+				</span>
+
+				<span class="port-panel panel-middle-left">
+				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.ThomasMoonKang.MinBlue"><img id="minblue-img" src="images/minblue.png" alt="minBlue"></a>
+				<h2>minBlue</h2>
 				<p>Description of games Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, labore, adipisci. Voluptates velit architecto libero laborum, minus molestiae in eius alias dolor ab quae, et inventore praesentium delectus odit nulla.</p>
-				<a href="http://twitter.com"><img src="images/colorwallss.png" alt="Colorwall"></a>
-				<h2>COLORWALL</h2>
+				</span>
+
+				<span class="port-panel panel-bottom-left">
+				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.ThomasMoonKang.MinBlue"><img id="minblue-img" src="images/minblue.png" alt="minBlue"></a>
+				<h2>minBlue</h2>
 				<p>Description of games Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, labore, adipisci. Voluptates velit architecto libero laborum, minus molestiae in eius alias dolor ab quae, et inventore praesentium delectus odit nulla.</p>
+				</span>
+
 			</div> <!-- left-column -->
 			<div class="right-column">
-				<h2>COLORWALL</h2>
+
+				<span class="port-panel panel-top-right">
+				<h2>Movie Database</h2>
 				<p>Description of games Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, labore, adipisci. Voluptates velit architecto libero laborum, minus molestiae in eius alias dolor ab quae, et inventore praesentium delectus odit nulla.</p>
+				<a target="_blank" href="http://whatdoiwatchnow.com"><img id="whattowatch-img" src="images/whattowatch.png" alt="Movie Database"></a>
+				</span>
 
-				<a href="http://twitter.com"><img src="images/colorwallss.png" alt="Colorwall"></a>
-
-				<h2>COLORWALL</h2>
+				<span class="port-panel panel-middle-right">
+				<h2>Colorwall</h2>
 				<p>Description of games Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, labore, adipisci. Voluptates velit architecto libero laborum, minus molestiae in eius alias dolor ab quae, et inventore praesentium delectus odit nulla.</p>
-
-				<a href="http://twitter.com"><img src="images/colorwallss.png" alt="Colorwall"></a>
+				<a target="_blank" href="http://thomasmoonkang.com/colorwall/"><img src="images/colorwall.png" alt="Colorwall"></a>
+				</span>
 
 			</div> <!-- right-column -->
 		</div> <!-- content -->
@@ -71,7 +89,36 @@
 	<section id="skills" class="container">
 		<div class="content">
 			<h1>SKILLS</h1>
-			
+			<div id="web-skills" class="skill-list">
+				<h2>Web Design</h2>
+				<ul>
+					<li>HTML</li>
+					<li>CSS/SASS</li>
+					<li>Javascript/jQuery</li>
+					<li>PHP</li>
+					<li>SQL</li>
+				</ul>
+			</div> <!-- web-skills -->
+
+			<div id="programming-skills" class="skill-list">
+				<h2>Programming</h2>
+				<ul>
+					<li>C#</li>
+					<li>Java</li>
+					<li>Node.js</li>
+					<li>Git</li>
+				</ul>
+			</div> <!-- web-skills -->
+
+			<div id="other-skills" class="skill-list">
+				<h2>Software</h2>
+				<ul>
+					<li>Visual Studio</li>
+					<li>Unity 3D</li>
+					<li>Photoshop</li>
+					<li>FL Studios</li>
+				</ul>
+			</div> <!-- web-skills -->
 		</div> <!-- content -->
 		<br class="clear">
 	</section> <!-- skills -->
@@ -79,8 +126,11 @@
 	<section id="contact" class="container">
 		<div class="content">
 			<h1>CONTACT</h1>
+			<p>
 			Email: tmkang201@gmail.com
 			<br>Cell: 347-461-3093
+			<br><a target="_blank" href="https://www.linkedin.com/pub/thomas-moon-kang/56/993/b31">LinkedIn</a>
+			</p>
 
 
 			<div class="experience-slot">
@@ -92,16 +142,7 @@
 	</section><!-- contact -->
 
 	<footer>
-		<section class="layout">
-			<div class="socialmediaicons">
-				<span class="title">join the movement:</span>
-				<ul>
-					<li><a href="http://twitter.com"><img src="images/socialmedia/twitter.png" alt="icon for twitter" class="icon"></a></li>
-					<li><a href="http://facebook.com"><img src="images/socialmedia/facebook.png" alt="icon for facebook" class="icon"></a></li>
-					<li><a href="http://meetup.com"><img src="images/socialmedia/meetup.png" alt="icon for meetup" class="icon"></a></li>
-				</ul>
-			</div>
-		</section>
+		©Copyright 2015 - Thomas Moon Kang Portfolio Website. All rights reserved.
 	</footer>
 	<script src="_/js/script.js"></script>
 	<script src="http://localhost:35729/livereload.js"></script>

@@ -10,6 +10,8 @@ $(document).ready(function(){
 		console.log($(window).scrollTop());
 
 		var windowpos = $(window).scrollTop();
+		var windowHeight = $( window ).height() - 180;
+
 		//Navbar changing
 		if(windowpos >= 100) {
 			nav.addClass('scrolled');
@@ -19,19 +21,18 @@ $(document).ready(function(){
 			nav.removeClass('scrolled');
 		}
 		//Container header highlighting
-		$('.container').removeClass('viewing');
-
-		if (windowpos >= $('#about').offset().top) {
-			$('#about').addClass('viewing');
+		$('.container:not(.animated)').removeClass('animate');
+		if (windowpos >= $('#about').offset().top - windowHeight) {
+			$('#about').addClass('animate animated');
 		}
-		if (windowpos >= $('#portfolio').offset().top) {
-			$('#portfolio').addClass('viewing');
+		if (windowpos >= $('#portfolio').offset().top - windowHeight) {
+			$('#portfolio').addClass('animate animated');
 		}
-		if (windowpos >= $('#resume').offset().top) {
-			$('#skills').addClass('viewing');
+		if (windowpos >= $('#skills').offset().top - windowHeight) {
+			$('#skills').addClass('animate animated');
 		}
-		if (windowpos >= $('#experience').offset().top) {
-			$('#contact').addClass('viewing');
+		if (windowpos >= $('#contact').offset().top - windowHeight) {
+			$('#contact').addClass('animate animated');
 		}
 
 	});
