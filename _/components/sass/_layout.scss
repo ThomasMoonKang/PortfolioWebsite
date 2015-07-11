@@ -1,4 +1,4 @@
-//Susy setup ----------------------------------------
+ //=====================================SUSY SETUP===============================
 $total-columns : 12;
 $column-width :4em;
 $gutter-width :1em;
@@ -10,19 +10,19 @@ $small : 32em;
 $medium : 47em;
 $large : 75em;
 
-//Navigation ----------------------------------------------------
-
-#navigation {
+#navigation { //=====================================NAVIGATION===============================
 	z-index: 3;
 	position: fixed;
 	right: 0;
-	width: 84px;
+	width: 100px;
 	height: 100%;
 	background: none;
 	text-shadow: 1px 1px #000;
+	font-weight: bold;
 
 	@include at-breakpoint($small) {
 		width: 100%;
+		height: auto;
 		top: 0;
 	}
 	#nav-bg{
@@ -34,6 +34,7 @@ $large : 75em;
 		position: absolute;
 		//@include background(linear-gradient(right, rgba($darkerblue, 1), rgba($darkerblue, 0.1)));
 		background: rgba(255,255,255,0.1);
+		background: darken($lightblue, 10);
 		@include single-transition(opacity, 0.5s, ease-out);
 	}
 	&.scrolled{
@@ -42,19 +43,31 @@ $large : 75em;
 		//background: rgba(255,255,255,0.1);
 		height: 100%;
 		@include at-breakpoint($small) {
-			height: 56px;
+			height: 65px;
 		}
-		text-shadow: 0px 0px #000;
+		text-shadow: none;
 		#nav-bg{
 			opacity: 1;
 		}
+		li {
+			span:hover{
+					color: $lightblue;
+					background: #fff;
+					text-shadow: none;
+
+			}
+		}
+		.blue {
+					color: $lightblue;
+					background: #fff;
+					text-shadow: none;
+		}
 	}
 	.layout {
-
 		margin: 50px auto 0;
 		@include single-transition(all, 0.2s, ease-out);
 		@include at-breakpoint($medium) {
-			@include span-columns(10,12);
+			@include span-columns(11,12);
 		}
 		@include span-columns(12,12);
 		&.loose {
@@ -70,6 +83,7 @@ $large : 75em;
 			}
 			li {
 				span{
+					border-radius: 4px;
 					color: $white;
 					padding-right: 0.5em;
 					cursor: pointer;
@@ -79,7 +93,7 @@ $large : 75em;
 					@include single-transition(all, 0.3s, ease-out);
 					display: block;
 					text-decoration: none;
-					padding: 5px 10px;
+					padding: 9px 10px;
 					color: $white;
 
 					&:hover {
@@ -89,14 +103,18 @@ $large : 75em;
 						} //a
 					} //a:hover
 				} //a
+
+				.blue {
+					color: $lightblue;
+				}
 			} //li
 		} //ul.nav
 	} //layout
 } //navigation
 
-//Content ------------------------------------------
+ //=====================================>CONTENT<===============================
 
-#home {
+#home { //=====================================HOME===============================
 	height: 500px;
 	@include background(linear-gradient(top left, rgba($darkerblue, 0.9), rgba($darkerblue, 0.5)),image-url('hero.jpg'));
 	#spacer{
@@ -130,17 +148,21 @@ $large : 75em;
 		#name-title {
 			font-size: 2rem;
 			@include animation(fade-right 1s ease-out);
+			@include single-transition(color, 0.6s, ease-out);
 		}
 	} //#home-content
+	&:hover h1{
+		color: lighten($lightblue, 10%);
+	}
 } //#home
 
-.container {
-	padding: 70px 100px 0 10px;
+.container {  //=====================================CONTAINERS===============================
+	padding: 70px 100px 50px 10px;
 
 	@include at-breakpoint($small){
-		padding: 50px 50px 0 50px;
+		padding: 50px 50px 30px 50px;
 		@include at-breakpoint($medium){
-			padding: 70px 100px 0 100px;
+			padding: 70px 100px 50px 100px;
 		}
 	}
 
@@ -154,128 +176,90 @@ $large : 75em;
 	} //&:hover
 } //Content layout
 
-#about {
+#about { //=====================================ABOUT===============================
 	background: $darkgray;
+	.selfie {
+		@include span-columns(2,12);
+		// height: 256px;
+		// width: 256px;
+		// border-radius: 10px;
+		// background-size: 256px 256px;
+		img {
+			@include animation(fade-right 1s ease-out forwards);
+			border-radius: 8px;
+			width: 11vw;
+			max-height: 180px;
+			max-width: 180px;
+		}
+	}
+	.about-text {
+		@include span-columns(10 omega, 12);
+	}
 	p{
-		@include animation(fade-right 1s ease-out forwards);
+		@include animation(fade-left 1s ease-out forwards);
+	}
+
+	&:hover a{
+		color: lighten($lightblue, 10%);
+	}
+	a:hover {
+		text-decoration: underline;
+	}
+	.bold {
+		font-weight: bold;
 	}
 
 } //#about
 
-#portfolio {
+#portfolio { //=====================================PORTFOLIO===============================
 	height: auto;
 	background: $mediumgray;
 
 	.content{
+		.pane-container {
+			padding-top: 20px;
+			height: auto;
+			.pane {
+				border-radius: 8px;
+				cursor: pointer;
+				//height: 100%;
+				@include span-columns(2,12);
+				margin-bottom: 2%;
+				width: 48%;
 
-		.panel-middle-left {
-			margin-top: 50px;
-		}
-
-		.panel-middle-right {
-			margin-top: 50px;
-			margin-bottom: 50px;
-		}
-		a {
-			@include at-breakpoint($medium){
-				margin-top: 50px;
-				margin-bottom: 50px;
-
-			} //breakpoint medium
-
-		}
-		img {
-			width: 100%;
-			clip-path: polygon (50% 0%, 0% 100%, 100% 100%);
-
-
-
-			&:hover {
-
-			} //hover
-		} //img
-		.left-column {
-			margin-top: 10px;
-			opacity: 0;
-			@include span-columns(12,12);
-			@include at-breakpoint($medium){
-				@include span-columns(6,12);
-				padding-right: 50px;
-				img {
-					margin-bottom: 10px;
+				@include at-breakpoint($small) {
+					width: 31%;
 				}
-			} //medium
-			.port-panel {
-				h2 {
-					top: 10%;
-				} //h2
-			} //.port-panel
-		} //left column
-		.right-column {
-			margin-top: 10px;
-			opacity: 0;
-			margin-bottom: 50px;
-			@include span-columns(12,12);
-			@include at-breakpoint($medium){
-				@include span-columns(6 omega,12);
-				padding-left: 50px;
-				img {
-					margin-top: 10px;
-				}
-			} //medium
-			.port-panel {
-				h2 {
-					bottom: 10%;
-				} //h2
-			} //.port-panel
-		} //.right column
-
-		.port-panel {
-			position: relative;
-			height: 100%;
-			display: block;
-			h2 {
-				position: absolute; 
-				left: 0; 
-				font: bold 24px/45px Helvetica, Sans-Serif; 
-				letter-spacing: -1px;  
-				background: rgb(0, 0, 0); /* fallback color */
-				background: rgba(0, 0, 0, 0.7);
-				padding: 10px;
-				@include transition(opacity 0.5s ease-out);
 
 				@include at-breakpoint($medium) {
-					opacity: 0;
-				} //medium
-			} //h2
-			p {
-				@include transition(opacity 0.5s ease-out 0.2s);
-
-				@include at-breakpoint($medium) {
-					opacity: 0;
-				} //medium
-			} //p
-			&:hover {
-				h2, p {
-					opacity: 1;
-				} //h2, p
-			} //&:hover
-		} //.port-panel
-	} //.content
-
+					width: 18%;
+				}
+				height: auto;
+				max-height: 872px;
+			}
+		} //.pane-container
+	} //.container
 	&.animate {
-		.left-column {
-
+		#pane-1{
 			@include animation(fade-right 1s ease-out forwards);
 		}
-		.right-column {
-
-			@include animation(fade-left 1s ease-out 1s forwards);
+		#pane-2 {
+			@include animation(fade-up 1s ease-out forwards);
 		}
-	} //&.animate
+		#pane-3 {
+			@include animation(fade-down 1s ease-out forwards);
+		}
+		#pane-4 {
+			@include animation(fade-up 1s ease-out forwards);
+		}
+		#pane-5 {
+			@include animation(fade-left 1s ease-out forwards);
+		}
+	}
+
 } //#portfolio
 
-#skills {
+#skills { //=====================================SKILLS===============================
 	background: $darkgray;
 	padding-bottom: 100px;
 	.content{
@@ -344,10 +328,130 @@ $large : 75em;
 		}
 	} //&.animate
 } //#skills
-
-#contact {
+#experience { //=====================================SKILLS===============================
 	background: $mediumgray;
+	height: 1300px;
 	padding-bottom: 100px;
+	@include transition(all 0.3s ease-out);
+	@include at-breakpoint($small) {
+		height: 1800px;
+	} //.line
+	.line {
+		position: absolute;
+		left: 40%;
+		width: 2px;
+		height: 900px;
+		background-color: $lightgray;
+		@include at-breakpoint($small) {
+			left: 50%;
+			height: 1400px;
+		} //.line
+
+		.point {
+			border: solid $white 4px;
+			display: block;
+			width: 80px;
+			height: 80px;
+			margin-left: -40px;
+			margin-top: 135px;
+			border-radius: 50%;
+			background-color: $white;
+			text-align: center;
+			color: $lightblue;
+			font-size: 1.6rem;
+			padding-top: 20px;
+			
+			@include at-breakpoint($small) {
+				width: 150px;
+				height: 150px;
+				margin-left: -75px;
+				margin-top: 200px;
+				font-size: 2.4rem;
+				padding-top: 55px;
+			} //small
+
+			&.first {
+				margin-top: 0px;
+				@include background($white image-url('rutgers-logo.jpg') no-repeat center);
+				background-size: 90%;
+			} //.first
+			&:nth-child(2) {
+				@include background(#0269d4 image-url('columbia-logo.jpg') no-repeat center);
+				background-size: 90%;
+			}
+			&:nth-child(3) {
+				@include background($white image-url('redshift-logo.png') no-repeat center);
+				background-size: 100%;
+			}
+			&:nth-child(4) {
+				@include background($white image-url('fdu-logo.jpg') no-repeat center);
+				background-size: 90%;
+			} //:nth-child(4)
+		} //.point
+	} //.line
+
+	.time-box {
+		// position: absolute;
+		// right: 10%;
+		// max-width: 400px;
+		opacity: 0;
+		height: 155px;
+		@include at-breakpoint($small) {
+			height: 150px;
+		}
+		p {
+			visibility: hidden;
+		}
+		h2 {
+			font-size: 1.2rem;
+		}
+		@include span-columns(4,12);
+
+		@include at-breakpoint($small) {
+			font-size: 1rem;
+			p {
+				visibility: visible;
+			}
+			h2 {
+				font-size: 1.5rem;
+			}
+		} //small
+
+		@include at-breakpoint($medium) {
+			font-size: 1.2rem;
+		}
+
+		&.odd {
+			margin-top: 0px;
+			@include span-columns(4 omega, 12);
+		} //.odd
+		&.animate {
+
+			@include animation(fade-down 1s ease-out forwards);
+		}
+		&:hover {
+			h2 {
+				color: $lightblue;
+			}
+		}
+	} //.time-box
+	.time-spacer {
+		height: 220px;
+
+		@include at-breakpoint($small) {
+			height: 350px;
+		}
+
+		@include span-columns(8 omega,12);
+		&.odd {
+			@include span-columns(8, 12);
+		} //.odd
+	} //.time-spacer
+} //#experience
+
+#contact { //=====================================CONTACT===============================
+	background: $darkgray;
+	padding-bottom: 60px;
 	p {
 		opacity: 0;
 	}
@@ -360,39 +464,219 @@ $large : 75em;
 	} //&.animate
 } //#contact
 
-
-//footer -----------------------------------------------------------------
-
-footer {
-	color: darken($lightgray, 30);
-	background: $mediumgray;
-	font-size: 0.8rem;
+footer { //=====================================FOOTER===============================
+	color: darken($lightgray, 35);
+	background: $darkgray;
+	font-size: 0.6rem;
 	padding-left: 10px;
 	padding-bottom: 5px;
+	@include at-breakpoint($small) {
+		font-size: 0.8rem;
+	}
 }
 
+.modal { //=====================================MODALS===============================
+	z-index: 2;
+
+	position: fixed;
+	width: 140%;
+	left: -80px;
+	top:20%;
+	@include at-breakpoint($small) {
+		width: 120%;
+	}
+	@include at-breakpoint($medium) {
+		width: 100%;
+		top: 40%;
+		left: -4vw;
+	}
+
+	/* Embiggen */
+	transform: scale(1.5); /* prefix me */
+
+	/* Hidden */
+	opacity: 0;
+	pointer-events: none;
+
+	.modal-content {
+		cursor: default;
+		text-align: center;
+		width: 60%;
+		margin: 0px auto;
+		img {
+			width: 100%;
+			float: left;
+
+			@include at-breakpoint($medium) {
+				width: 60%;
+			}
+			@include transform(translate(0px, -4vw));
+
+			@include animation(clip-back 0.3s ease-out forwards)
+		}
+		.close-button {
+			position: fixed;
+			height: 100px;
+			width: 100px;
+			top: -50px;
+			right: 0;
+			cursor: pointer;
+			@include transform(rotateZ(45deg));
+			&:before {
+				content: "";
+				position: absolute;
+				height: 100px;
+				width: 2px;
+				background: $white;
+
+			}
+			&:after {
+				content: "";
+				position: absolute;
+				height: 2px;
+				width: 100px;
+				top: 49px;
+				left: 0px;
+
+
+				background: $white;
+			}
+			&:hover {
+				&:before, &:after {
+					background: $lightgray;
+				}
+			}
+		}
+		.modal-text {
+			width: 100%;
+			float: right;
+
+			@include at-breakpoint($medium) {
+				width: 35%;
+			}
+			span {
+				display: block;
+				color: $white;
+			}
+			.modal-date {
+				font-family: $font-secondary;
+				font-weight: 100;
+				color: $lightblue;
+				margin-bottom: 40px;
+				font-size: 100px;
+
+				padding-top: 30px;
+				border-top: solid 1px $lightgray;
+
+				@include at-breakpoint($medium) {
+				font-size: 9vw;
+				margin-bottom: 4vw;
+				text-align: right;
+
+				border-top-width: 0;
+				padding-top: 0;
+				}
+			}
+			.modal-name {
+				border-top: solid 1px $lightgray;
+				border-bottom: solid 1px $lightgray;
+				padding-top: 10px;
+				padding-bottom: 10px;
+				font-size: 20px;
+				@include at-breakpoint($medium) {
+				padding-top: 1vw;
+				padding-bottom: 1vw;
+				font-size: 2vw;
+				}
+			}
+			.modal-visit {
+				margin-top: 15px;
+				padding-top: 5px;
+				padding-bottom: 5px;
+
+				border: solid 1px $white;
+				font-size: 20px;
+				cursor: pointer;
+
+				@include transition(background-color 0.3s ease-out);
+
+				&:hover {
+					background: rgba(255,255,255,0.1);
+				} //hover
+			} //.modal-visit
+		} //.modal-text
+	} //.modal-content
+	&.visible {
+		img {
+			-webkit-clip-path: polygon(0 0, 95% 11%, 100% 91%, 16% 100%); clip-path: polygon(0 0, 95% 11%, 100% 91%, 16% 100%);
+		}
+		img:hover{
+			//@include transform(translate(0px, -80px));
+			@include animation(clip-go 0.3s ease-out forwards)
+		}
+	}
+} //.modal
+.modalOpen {
+	#page-wrap {
+
+	/* Blur and de-color */
+	@include filter(blur(2px) grayscale(50%) brightness(20%));
+	// recede
+	@include transform(scale(0.9));
+
+	}
+	.modal.visible {
+	/* Regular size and visible */
+	transform: scale(1); /* prefix me */
+	opacity: 1;
+
+	/* Clickable */
+	pointer-events: auto;
+	}
+	.pane {
+		cursor: default !important;
+	}
+}
+#page-wrap, .modal {
+
+	@include transition(all 0.4s ease);
+	.modal-img {
+		width: 20%;
+	}
+}
+
+//Animations --------------------------------------------------
 @include keyframes(color) {
 	from {background: red;}
 	to {background: yellow;}
 	
 }
 @include keyframes(fade-left) {
-	from {transform: translate(5em,0); opacity: 0;}
-	to {transform: translate(0,0); opacity: 1;}
+	from {@include transform(translate(5em,0)); opacity: 0;}
+	to {@include transform(translate(0,0)); opacity: 1;}
 }
 @include keyframes(fade-right) {
-	from {transform: translate(-5em,0); opacity: 0;}
-	to {transform: translate(0,0); opacity: 1;}
+	from {@include transform(translate(-5em,0)); opacity: 0;}
+	to {@include transform(translate(0,0)); opacity: 1;}
 }
 @include keyframes(fade-up) {
-	from {transform: translate(0,1em); opacity: 0;}
-	to {transform: translate(0,0); opacity: 1;}
+	from {@include transform(translate(0,1em)); opacity: 0;}
+	to {@include transform(translate(0,0)); opacity: 1;}
 }
 @include keyframes(fade-down) {
-	from {transform: translate(0,-1em); opacity: 0;}
-	to {transform: translate(0,0); opacity: 1;}
+	from {@include transform(translate(0,-1em)); opacity: 0;}
+	to {@include transform(translate(0,0)); opacity: 1;}
 }
 @include keyframes(glow-white) {
 	from {color: inherit;}
 	to {color: $white;}
+}
+
+@include keyframes(clip-go) {
+	from {-webkit-clip-path: polygon(0 0, 95% 11%, 100% 91%, 16% 100%); clip-path: polygon(0 0, 95% 11%, 100% 91%, 16% 100%);}
+	to {-webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%); clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);}
+}
+@include keyframes(clip-back) {
+	to {-webkit-clip-path: polygon(0 0, 95% 11%, 100% 91%, 16% 100%); clip-path: polygon(0 0, 95% 11%, 100% 91%, 16% 100%);}
+	from {-webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%); clip-path: polygon(0 0, 100% 0%, 100% 100%, 0% 100%);}
 }

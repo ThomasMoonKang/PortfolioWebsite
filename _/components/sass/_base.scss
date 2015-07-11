@@ -1,6 +1,10 @@
 @import url('http://fonts.googleapis.com/css?family=Lato:100,400|Open+Sans|Raleway|Josefin+Sans');
 @import url('http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css');
 
+$small : 32em;
+$medium : 47em;
+$large : 75em;
+
 html {
 	overflow-x: hidden;
 }
@@ -9,8 +13,15 @@ body {
 	font-family: $font-primary;
 	font-size: 1.2rem;
 	line-height: 160%;
-	background: $white;
+	background: #080808;
 	color: $lightgray;
+
+	&::selection {
+		background: $lightblue; /* WebKit/Blink Browsers */
+	}
+	&::-moz-selection {
+		background: $lightblue; /* Gecko Browsers */
+	}
 }
 
 #{headings()} {
@@ -28,6 +39,10 @@ h1 {
 	//border-bottom: 1px solid $lightgray;
 	padding-top: 10px;
 	@include single-transition(color, 0.6s, ease-out);
+	@include at-breakpoint($medium) {
+		font-size: 4.0rem;
+		margin-bottom: .5rem;
+	}
 }
 
 h2 {

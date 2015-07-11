@@ -4,13 +4,24 @@
 <head>
 	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<link rel="icon" href="images/hero.jpg">
+	<meta name="keywords" content="Thomas, Moon, Kang, Web, Game, UI, UX, Designer">
+	<meta name="description" content="Thomas Moon Kang - UI/UX/Web Designer">
+	<meta name="author" content="Thomas Moon Kang">
+	<meta name="theme-color" content="#ffffff">
+
+	<link rel="icon" type="image/png" href="images/favicon-32x32.png" sizes="32x32">
+	<link rel="icon" type="image/png" href="images/favicon-194x194.png" sizes="194x194">
+	<link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96">
+	<link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
+
 	<title>Thomas Moon Kang</title>
 	<link rel="stylesheet" href="_/css/styles.css">
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 	<script src="http://ajax.aspnetcdn.com/ajax/modernizr/modernizr-2.7.2.js"></script>
+	<script src="_/js/script.js"></script>
 </head>
 <body>
+	<div id="page-wrap">
 	<header>
 		<div id="navigation">
 			<div class="layout">
@@ -18,8 +29,9 @@
 					<li><span id="home-btn" class="section-link">Home</span></li>
 					<li><span id="about-btn" class="section-link">About</span></li>
 					<li><span id="portfolio-btn" class="section-link">Portfolio</span></li>
-					<li><span id="resume-btn" class="section-link">Skills</span></li>
-					<li><span id="experience-btn" class="section-link">Contact</span></li>
+					<li><span id="skills-btn" class="section-link">Skills</span></li>
+					<li><span id="experience-btn" class="section-link">Experience</span></li>
+					<li><span id="contact-btn" class="section-link">Contact</span></li>
 				</ul>
 			</div> <!-- layout -->
 			<span id="nav-bg"></span>
@@ -35,10 +47,14 @@
 	<section id="about" class="container">
 		<div class="content">
 			<h1>ABOUT</h1>
-			<p>
-			Hi, my name is Thomas Kang, and I love design. 
-			<br> I started out designing with K-nex and drawing, then video editing, music creation, game development, and now web design.
-			<br>Right now, I'm a senior at Rutgers University.</p>
+			<span class="selfie"><img src="images/selfie.jpg" alt="Selfie"></span>
+			<span class="about-text">
+				<p>
+				Hi, my name is <span class="bold">Thomas Kang</span>. I love technology and design. The best thing I ever did was combine them.
+				<br> I started out designing with paper and Legos, then video editing, music creation, game development, and now web design.
+				<br><br> In my sparse, spare time I like to <a href="http://croirefly.newgrounds.com/audio/" target="_blank">compose music</a> and <a href="https://www.youtube.com/watch?v=D-Qds2XWa2U" target="_blank">play piano</a>.
+				<br><br>Right now, I work as a UI/UX Developer at <a href="http://cait.rutgers.edu/" target="_blank">Rutgers CAIT</a> as a senior at Rutgers University.</p>
+			</span>
 			
 		</div>	<!-- content -->
 		<br class="clear">
@@ -46,42 +62,14 @@
 	<section id="portfolio" class="container">
 		<div class="content">
 			<h1>PORTFOLIO</h1>
-			<div class="left-column">
 
-				<span class="port-panel panel-top-left">
-				<a target="_blank" href="http://thomasmoonkang.com/bookexchange"><img id="book-img" src="images/bookexchange.png" alt="Book Exchange"></a>
-				<h2>Book Exchange</h2>
-				<p>A website made to allow people to exchange books online, makes use of SQL databases and PHP scripts for account systems dynamic search results. Created as a Web Design group project with Matt Kaiser, and Madan Kumar.</p>
-				</span>
-
-				<span class="port-panel panel-middle-left">
-				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.ThomasMoonKang.MinBlue"><img id="minblue-img" src="images/minblue.png" alt="minBlue"></a>
-				<h2>minBlue</h2>
-				<p>Description of games Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, labore, adipisci. Voluptates velit architecto libero laborum, minus molestiae in eius alias dolor ab quae, et inventore praesentium delectus odit nulla.</p>
-				</span>
-
-				<span class="port-panel panel-bottom-left">
-				<a target="_blank" href="https://play.google.com/store/apps/details?id=com.ThomasMoonKang.MinBlue"><img id="minblue-img" src="images/minblue.png" alt="minBlue"></a>
-				<h2>minBlue</h2>
-				<p>Description of games Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, labore, adipisci. Voluptates velit architecto libero laborum, minus molestiae in eius alias dolor ab quae, et inventore praesentium delectus odit nulla.</p>
-				</span>
-
-			</div> <!-- left-column -->
-			<div class="right-column">
-
-				<span class="port-panel panel-top-right">
-				<h2>Movie Database</h2>
-				<p>Description of games Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, labore, adipisci. Voluptates velit architecto libero laborum, minus molestiae in eius alias dolor ab quae, et inventore praesentium delectus odit nulla.</p>
-				<a target="_blank" href="http://whatdoiwatchnow.com"><img id="whattowatch-img" src="images/whattowatch.png" alt="Movie Database"></a>
-				</span>
-
-				<span class="port-panel panel-middle-right">
-				<h2>Colorwall</h2>
-				<p>Description of games Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta, labore, adipisci. Voluptates velit architecto libero laborum, minus molestiae in eius alias dolor ab quae, et inventore praesentium delectus odit nulla.</p>
-				<a target="_blank" href="http://thomasmoonkang.com/colorwall/"><img src="images/colorwall.png" alt="Colorwall"></a>
-				</span>
-
-			</div> <!-- right-column -->
+				<div class="pane-container">
+					<img class="pane pane-1" id="pane-1" src="images/pane-1-bw.jpg" alt="Book Exchange">
+					<img class="pane pane-2" id="pane-2" src="images/pane-2-bw.jpg" alt="Book Exchange">
+					<img class="pane pane-3" id="pane-3" src="images/pane-3-bw.jpg" alt="Book Exchange">
+					<img class="pane pane-4" id="pane-4" src="images/pane-4-bw.jpg" alt="Book Exchange">
+					<img class="pane pane-5" id="pane-5" src="images/pane-5-bw.jpg" alt="Book Exchange">
+				</div>
 		</div> <!-- content -->
 		<br class="clear">
 	</section> <!-- portfolio -->
@@ -114,18 +102,54 @@
 				<h2>Software</h2>
 				<ul>
 					<li>Visual Studio</li>
+					<li>Dreamweaver</li>
 					<li>Unity 3D</li>
 					<li>Photoshop</li>
+					<li>Excel</li>
 					<li>FL Studios</li>
 				</ul>
 			</div> <!-- web-skills -->
 		</div> <!-- content -->
 		<br class="clear">
 	</section> <!-- skills -->
-
+	<section id="experience" class="container">
+		<h1>EXPERIENCE</h1>
+		<span class="line">
+			<a href="http://cait.rutgers.edu/ltbp" class="point first" target="_blank"></a>
+			<a href="http://www.earthinstitute.columbia.edu/" class="point" target="_blank"</a>
+			<a href="http://www.redshift-tech.com/" class="point" target="_blank"></a>
+			<a href="http://view2.fdu.edu/campuses-and-centers/center-for-cybersecurity-and-information-assurance/faculty-and-staff/lewis/" class="point" target="_blank"></a>
+			<span class="point">Born</span>
+		</span>
+		<span class="time-spacer odd"></span>
+		<span class="time-box odd">
+			<h2>2015 - Current</h2>
+			<h2>Rutgers CAIT - UI/UX Designer</h2>
+			<p>Employed as a UI/UX Designer at the Rutgers Center for Advanced Infrastructure and Transportation. Primarily responsible for designing the User Interface for the LTBP (Long Term Bridge Performance Program) Web Portal. Required to develop and revise mockups, work in a team, and deliver polished content in JavaScript and CSS. Use of various JavaScript frameworks: Telerik Kendo UI, JQuery, Bootstrap etc.</p>
+		</span>
+		<span class="time-spacer"></span>
+		<span class="time-box">
+			<h2>2011 - 2012</h2>
+			<h2>Earth Institute - Paid Payroll Intern</h2>
+			<p>Worked as a paid payroll intern in the headquarters of a research institute at Columbia University. Scheduled interviews and meetings, served as the human resources receptionist, managed timesheets and invoices and emailed employees about confidential compensation information.</p>
+		</span>
+		<span class="time-spacer odd"></span>
+		<span class="time-box odd">
+			<h2>2011 - 2012</h2>
+			<h2>Redshift Technologies - Intern</h2>
+			<p>Worked as an intern for a software engineering company that served the programming and database management needs of Fortune 500 clients in the medical, pharmaceutical, and chemical industries. Analyzed spreadsheets and excel formulas to manage information for clients. Learned the development process for websites, including user input functionality and data storage.</p>
+		</span>
+		<span class="time-spacer"></span>
+		<span class="time-box">
+			<h2>2009 - 2010</h2>
+			<h2>Fairleigh Dickinson University - Intern</h2>
+			<p>Intern to Melvin A. Lewis, Associate Director of the School of Computer Science and Engineering. Worked closely with Professor Lewis, studied and tested an autonomous (i.e., independent of human guidance) robot car working with photosensors. Developed an autonomous stick shift for another, larger autonomous robot car.</p>
+		</span>
+	</section>
 	<section id="contact" class="container">
 		<div class="content">
 			<h1>CONTACT</h1>
+			<h2>Need a website?</h2>
 			<p>
 			Email: tmkang201@gmail.com
 			<br>Cell: 347-461-3093
@@ -142,9 +166,66 @@
 	</section><!-- contact -->
 
 	<footer>
-		©Copyright 2015 - Thomas Moon Kang Portfolio Website. All rights reserved.
+		Copyright 2015 © Thomas Moon Kang
 	</footer>
-	<script src="_/js/script.js"></script>
+	<div class=".dim">
+	</div>
+	</div>
+	<div class="modal pane-1">
+		<div class="modal-content">
+			<span class="close-button"></span>
+			<img class="modal-img" id="pane-1" src="images/ltbp01.jpg" alt="Long Term Bridge Program">
+			<div class="modal-text">
+				<span class="modal-date">2015</span>
+				<span class="modal-name">BRIDGE PORTAL</span>
+				<span class="modal-visit" id="link-1">VISIT SITE</span>
+			</div>
+		</div>
+	</div>
+	<div class="modal pane-2">
+		<div class="modal-content">
+			<span class="close-button"></span>
+			<img class="modal-img" id="pane-2" src="images/bookexchange01.jpg" alt="Book Exchange">
+			<div class="modal-text">
+				<span class="modal-date">2015</span>
+				<span class="modal-name">BOOK EXCHANGE</span>
+				<span class="modal-visit" id="link-2">VISIT SITE</span>
+			</div>
+		</div>
+	</div>
+	<div class="modal pane-3">
+		<div class="modal-content">
+			<span class="close-button"></span>
+			<img class="modal-img" id="pane-3" src="images/whattowatch01.jpg" alt="WhatToWatch">
+			<div class="modal-text">
+				<span class="modal-date">2015</span>
+				<span class="modal-name">MOVIE SEARCH</span>
+				<span class="modal-visit" id="link-3">VISIT SITE</span>
+			</div>
+		</div>
+	</div>
+	<div class="modal pane-4">
+		<div class="modal-content">
+			<span class="close-button"></span>
+			<img class="modal-img" id="pane-4" src="images/minblue01.jpg" alt="minBlue">
+			<div class="modal-text">
+				<span class="modal-date">2015</span>
+				<span class="modal-name">minBlue</span>
+				<span class="modal-visit" id="link-4">VISIT SITE</span>
+			</div>
+		</div>
+	</div>
+	<div class="modal pane-5">
+		<div class="modal-content">
+			<span class="close-button"></span>
+			<img class="modal-img" id="pane-5" src="images/colorwall01.jpg" alt="Colorwall">
+			<div class="modal-text">
+				<span class="modal-date">2015</span>
+				<span class="modal-name">COLORWALL</span>
+				<span class="modal-visit" id="link-5">VISIT SITE</span>
+			</div>
+		</div>
+	</div>
 	<script src="http://localhost:35729/livereload.js"></script>
 </body>
 
