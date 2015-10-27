@@ -34,7 +34,8 @@ $large : 75em;
 		position: absolute;
 		//@include background(linear-gradient(right, rgba($darkerblue, 1), rgba($darkerblue, 0.1)));
 		background: rgba(255,255,255,0.1);
-		background: darken($lightblue, 10);
+		//background: darken($lightblue, 10);
+		background: $blue;
 		@include single-transition(opacity, 0.5s, ease-out);
 	}
 	&.scrolled{
@@ -219,10 +220,14 @@ $large : 75em;
 		.pane-container {
 			padding-top: 20px;
 			height: auto;
+			@include at-breakpoint($medium) {
+				max-width: 1800px;
+				margin: 0 auto;
+			}
 			.pane {
 				border-radius: 8px;
 				cursor: pointer;
-				//height: 100%;
+				//height: 20%;
 				@include span-columns(2,12);
 				margin-bottom: 2%;
 				width: 48%;
@@ -328,7 +333,7 @@ $large : 75em;
 		}
 	} //&.animate
 } //#skills
-#experience { //=====================================SKILLS===============================
+#experience { //=====================================EXPERIENCE===============================
 	background: $mediumgray;
 	height: 1300px;
 	padding-bottom: 100px;
