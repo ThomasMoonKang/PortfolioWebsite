@@ -86,7 +86,7 @@ $(document).ready(function(){
 	//Link to site 
 
 	$('#link-1').on("click", function() {
-		window.open('https://ltbp4.rutgers.edu/', '_blank');
+		window.open('https://ltbp6.rutgers.edu/', '_blank');
 	});
 	$('#link-2').on("click", function() {
 		window.open('http://thomasmoonkang.com/bookexchange', '_blank');
