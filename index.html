@@ -13,6 +13,7 @@
 	<link rel="icon" type="image/png" href="images/favicon-194x194.png" sizes="194x194">
 	<link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96">
 	<link rel="icon" type="image/png" href="images/favicon-16x16.png" sizes="16x16">
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,400|Open+Sans|Raleway|Josefin+Sans' rel='stylesheet' type='text/css'>
 
 	<title>Thomas Moon Kang</title>
 	<link rel="stylesheet" href="_/css/styles.css">
@@ -24,6 +25,7 @@
 	<div id="page-wrap">
 	<header>
 		<div id="navigation">
+			<span id="nav-bg"></span>
 			<div class="layout">
 				<ul class="nav">
 					<li><span id="home-btn" class="section-link">Home</span></li>
@@ -34,15 +36,14 @@
 					<li><span id="contact-btn" class="section-link">Contact</span></li>
 				</ul>
 			</div> <!-- layout -->
-			<span id="nav-bg"></span>
 		</div> <!-- navigation -->
 	</header>
 	<section id="home">
-		<div id="spacer"></div>
 		<div id="home-content">
-			<span id="name-plate"><h1>Thomas Moon Kang</h1></span>
-			<span id="name-title">UI/UX/Web Designer</span>
+			<div id="name-plate"><h1>Thomas Moon Kang</h1></div>
+			<div id="name-title">Game/UI/Web Developer</div>
 		</div> <!-- home-content -->
+		<br class="clear">
 	</section> <!-- home -->
 	<section id="about" class="container">
 		<div class="content">
@@ -51,7 +52,7 @@
 			<span class="about-text">
 				<p>
 				Hi, my name is <span class="bold">Thomas Kang</span>. I love technology and design. The best thing I ever did was combine them.
-				<br> I started out designing with paper and Legos, then video editing, music creation, game development, and now web design.
+				<br> I started out designing with paper and Legos, then video editing, music creation, and now game development and web design.
 				<br><br> In my spare time I like to <a href="http://croirefly.newgrounds.com/audio/" target="_blank">compose music</a> and <a href="https://www.youtube.com/watch?v=D-Qds2XWa2U" target="_blank">play piano</a>.
 				<br><br>Right now, I work as a UI/UX Developer at <a href="http://cait.rutgers.edu/" target="_blank">Rutgers CAIT</a> as a senior at Rutgers University.</p>
 			</span>
@@ -64,11 +65,12 @@
 			<h1>PORTFOLIO</h1>
 
 				<div class="pane-container">
-					<img class="pane pane-1" id="pane-1" src="images/pane-1-bw.jpg" alt="Book Exchange">
-					<img class="pane pane-2" id="pane-2" src="images/pane-2-bw.jpg" alt="Book Exchange">
-					<img class="pane pane-3" id="pane-3" src="images/pane-3-bw.jpg" alt="Book Exchange">
+					<img class="pane pane-1" id="pane-1" src="images/pane-1-bw.jpg" alt="Astral Gun">
+					<img class="pane pane-2" id="pane-2" src="images/pane-2-bw.jpg" alt="Bridge Portal">
+					<img class="pane pane-3" id="pane-3" src="images/pane-3-bw.jpg" alt="Movie DB">
 					<img class="pane pane-4" id="pane-4" src="images/pane-4-bw.jpg" alt="Book Exchange">
-					<img class="pane pane-5" id="pane-5" src="images/pane-5-bw.jpg" alt="Book Exchange">
+					<img class="pane pane-5" id="pane-5" src="images/pane-5-bw.jpg" alt="MinBlue">
+					<br class="clear">
 				</div>
 		</div> <!-- content -->
 		<br class="clear">
@@ -104,7 +106,7 @@
 			<div id="other-skills" class="skill-list">
 				<h2>Software</h2>
 				<ul>
-					<li>Unity 3D</li>
+					<li>Unity 5</li>
 					<li>Visual Studio</li>
 					<li>Photoshop</li>
 					<li>Dreamweaver</li>
@@ -177,55 +179,70 @@
 	<div class="modal pane-1">
 		<div class="modal-content">
 			<span class="close-button"></span>
-			<img class="modal-img" id="pane-1" src="images/ltbp01.jpg" alt="Long Term Bridge Program">
+			<img class="modal-img" id="pane-1-img" src="images/astralgun01.jpg" alt="AstralGun">
 			<div class="modal-text">
-				<span class="modal-date">2015</span>
-				<span class="modal-name">BRIDGE PORTAL</span>
+				<span class="modal-date">2016</span>
+				<span class="modal-name">ASTRAL GUN</span>
 				<span class="modal-visit" id="link-1">VISIT SITE</span>
+				<div class="modal-description">
+					Solo developer for a local multiplayer PC game published on the Steam entertainment platform. Developed in Unity 5 and C#. Also handled all marketing, art, and media production.
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="modal pane-2">
 		<div class="modal-content">
 			<span class="close-button"></span>
-			<img class="modal-img" id="pane-2" src="images/bookexchange01.jpg" alt="Book Exchange">
+			<img class="modal-img" id="pane-2-img" src="images/ltbp01.jpg" alt="Long Term Bridge Program">
 			<div class="modal-text">
 				<span class="modal-date">2015</span>
-				<span class="modal-name">BOOK EXCHANGE</span>
+				<span class="modal-name">BRIDGE PORTAL</span>
 				<span class="modal-visit" id="link-2">VISIT SITE</span>
+				<div class="modal-description">
+				Designed and developed the user interface and graphics, including the landing page, for LTBP Bridge Portal, a bridge analysis site for the Federal Highway Administration.
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="modal pane-3">
 		<div class="modal-content">
 			<span class="close-button"></span>
-			<img class="modal-img" id="pane-3" src="images/whattowatch01.jpg" alt="WhatToWatch">
+			<img class="modal-img" id="pane-3-img" src="images/whattowatch01.jpg" alt="WhatToWatch">
 			<div class="modal-text">
 				<span class="modal-date">2015</span>
 				<span class="modal-name">MOVIE SEARCH</span>
 				<span class="modal-visit" id="link-3">VISIT SITE</span>
+				<div class="modal-description">
+				Developed and designed a movie search website implementing APIs from Open Movie DB and The Movie DB. Heavy focus on user interface and aesthetics.
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="modal pane-4">
 		<div class="modal-content">
 			<span class="close-button"></span>
-			<img class="modal-img" id="pane-4" src="images/minblue01.jpg" alt="minBlue">
+			<img class="modal-img" id="pane-4-img" src="images/bookexchange01.jpg" alt="Book Exchange">
 			<div class="modal-text">
 				<span class="modal-date">2015</span>
-				<span class="modal-name">minBlue</span>
+				<span class="modal-name">BOOK EXCHANGE</span>
 				<span class="modal-visit" id="link-4">VISIT SITE</span>
+				<div class="modal-description">
+				Developed the user account system, dynamic search bar, and login via php for a book sharing website prototype.
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="modal pane-5">
 		<div class="modal-content">
 			<span class="close-button"></span>
-			<img class="modal-img" id="pane-5" src="images/colorwall01.jpg" alt="Colorwall">
+			<img class="modal-img" id="pane-5-img" src="images/minblue01.jpg" alt="minBlue">
 			<div class="modal-text">
 				<span class="modal-date">2015</span>
-				<span class="modal-name">COLORWALL</span>
+				<span class="modal-name">minBlue</span>
 				<span class="modal-visit" id="link-5">VISIT SITE</span>
+				<div class="modal-description">
+				Solo developer for MinBlue, a minimalist puzzle-reflex android game with 60 levels in Unity 4 Available in the Google Play store.
+				</div>
 			</div>
 		</div>
 	</div>

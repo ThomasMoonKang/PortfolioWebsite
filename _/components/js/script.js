@@ -86,19 +86,19 @@ $(document).ready(function(){
 	//Link to site 
 
 	$('#link-1').on("click", function() {
-		window.open('https://ltbp6.rutgers.edu/', '_blank');
+		window.open('http://astralgun.com/', '_blank');
 	});
 	$('#link-2').on("click", function() {
-		window.open('http://thomasmoonkang.com/bookexchange', '_blank');
+		window.open('https://ltbp6.rutgers.edu/', '_blank');
 	});
 	$('#link-3').on("click", function() {
 		window.open('http://whatdoiwatchnow.com/', '_blank');
 	});
 	$('#link-4').on("click", function() {
-		window.open('https://play.google.com/store/apps/details?id=com.ThomasMoonKang.MinBlue&hl=en', '_blank');
+		window.open('http://thomasmoonkang.com/bookexchange', '_blank');
 	});
 	$('#link-5').on("click", function() {
-		window.open('http://thomasmoonkang.com/colorwall', '_blank');
+		window.open('https://play.google.com/store/apps/details?id=com.ThomasMoonKang.MinBlue&hl=en', '_blank');
 	});
 
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -106,7 +106,7 @@ $(document).ready(function(){
   m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-64851226-1', 'auto');
+  ga('create', 'UA-64851226-1', 'auto')
   ga('send', 'pageview');
 });
 

@@ -17,6 +17,7 @@ $large : 75em;
 	width: 100px;
 	height: 100%;
 	background: none;
+	display: none;
 	text-shadow: 1px 1px #000;
 	font-weight: bold;
 
@@ -24,19 +25,21 @@ $large : 75em;
 		width: 100%;
 		height: auto;
 		top: 0;
+		display: block;
 	}
+	
 	#nav-bg{
 		z-index: -1;
 		opacity: 0;
 		width: 100%;
 		height: 100%;
-		display: block;
 		position: absolute;
 		//@include background(linear-gradient(right, rgba($darkerblue, 1), rgba($darkerblue, 0.1)));
 		background: rgba(255,255,255,0.1);
+		background-color: $darkgray;
 		//background: darken($lightblue, 10);
-		background: $blue;
 		@include single-transition(opacity, 0.5s, ease-out);
+		box-shadow: 1px 1px 2px rgba(255,255,255,0.2)
 	}
 	&.scrolled{
 		margin-top: 0;
@@ -44,7 +47,7 @@ $large : 75em;
 		//background: rgba(255,255,255,0.1);
 		height: 100%;
 		@include at-breakpoint($small) {
-			height: 65px;
+			height: 63px;
 		}
 		text-shadow: none;
 		#nav-bg{
@@ -53,14 +56,14 @@ $large : 75em;
 		li {
 			span:hover{
 					color: $lightblue;
-					background: #fff;
+					//background: #fff;
 					text-shadow: none;
 
 			}
 		}
 		.blue {
 					color: $lightblue;
-					background: #fff;
+					//background: #fff;
 					text-shadow: none;
 		}
 	}
@@ -91,7 +94,7 @@ $large : 75em;
 				}
 
 				span {
-					@include single-transition(all, 0.3s, ease-out);
+					@include single-transition(all, 0.2s, ease-out);
 					display: block;
 					text-decoration: none;
 					padding: 9px 10px;
@@ -116,35 +119,32 @@ $large : 75em;
  //=====================================>CONTENT<===============================
 
 #home { //=====================================HOME===============================
-	height: 500px;
-	@include background(linear-gradient(top left, rgba($darkerblue, 0.9), rgba($darkerblue, 0.5)),image-url('hero.jpg'));
-	#spacer{
-		@include span-columns(1,12);
-		height: 200px;
+	padding: 60px 20px 80px 20px;
+	@include at-breakpoint($small){
+		padding: 120px 20px 120px 40px;
 	}
+	@include at-breakpoint($medium){
+		padding: 160px 20px 160px 40px;
+	}
+	@include at-breakpoint($large){
+		padding: 200px 20px 200px 80px;
+	}
+	@include background(linear-gradient(top left, rgba($darkerblue, 0.9), rgba($darkerblue, 0.5)),image-url('hero.jpg'));
 	#home-content {
 		@include span-columns(10,12);
-		position: absolute;
-		top: 100px;
-		width: 300px;
-		line-height: 100%;
-		margin-left: auto;
 		color: $white;
 
 		@include transition(top 0.3s ease-out);
 
-		@include at-breakpoint($small){
-			width: auto;
-		}
-		@include at-breakpoint($medium){
-			top: 200px;
-		}
-		
-		#name-plate h1{
-			font-size: 5rem;
-			line-height: 100%;
-			/* @keyframes name | duration | timing-function | delay | iteration-count | direction | fill-mode | play-state */
-			@include animation(fade-down 1s ease-out);
+		#name-plate {
+			margin-bottom: 16px;
+			h1{
+				font-size: 5rem;
+				line-height: 100%;
+				/* @keyframes name | duration | timing-function | delay | iteration-count | direction | fill-mode | play-state */
+				@include animation(fade-down 1s ease-out);
+				@include single-transition(color, 0.6s, ease-out);
+			}
 		}
 		#name-title {
 			font-size: 2rem;
@@ -158,7 +158,7 @@ $large : 75em;
 } //#home
 
 .container {  //=====================================CONTAINERS===============================
-	padding: 70px 100px 50px 10px;
+	padding: 60px 20px 50px 20px;
 
 	@include at-breakpoint($small){
 		padding: 50px 50px 30px 50px;
@@ -180,21 +180,38 @@ $large : 75em;
 #about { //=====================================ABOUT===============================
 	background: $darkgray;
 	.selfie {
-		@include span-columns(2,12);
+		@include span-columns(12,12);
+		display: block;
+
+		@include at-breakpoint($medium) {
+			@include span-columns(2,12);
+			display: inline-block;
+		}
 		// height: 256px;
 		// width: 256px;
 		// border-radius: 10px;
 		// background-size: 256px 256px;
 		img {
-			@include animation(fade-right 1s ease-out forwards);
+			display: block;
+			margin: 0 auto 10px;
 			border-radius: 8px;
-			width: 11vw;
+			width: 80%;
 			max-height: 180px;
 			max-width: 180px;
+
+			@include at-breakpoint($medium) {
+				display: inline-block;
+				margin: auto;
+				width: 11vw;
+			}
+			@include animation(fade-right 1s ease-out forwards);
 		}
 	}
 	.about-text {
-		@include span-columns(10 omega, 12);
+		@include span-columns(12 omega, 12);
+		@include at-breakpoint($medium) {
+			@include span-columns(10 omega, 12);
+		}
 	}
 	p{
 		@include animation(fade-left 1s ease-out forwards);
@@ -239,7 +256,6 @@ $large : 75em;
 				@include at-breakpoint($medium) {
 					width: 18%;
 				}
-				height: auto;
 				max-height: 872px;
 			}
 		} //.pane-container
@@ -484,14 +500,10 @@ footer { //=====================================FOOTER==========================
 	z-index: 2;
 
 	position: fixed;
-	width: 140%;
-	left: -80px;
-	top:20%;
-	@include at-breakpoint($small) {
-		width: 120%;
-	}
+	width: 100%;
+	//left: -80px;
+	top: 20%;
 	@include at-breakpoint($medium) {
-		width: 100%;
 		top: 40%;
 		left: -4vw;
 	}
@@ -506,26 +518,31 @@ footer { //=====================================FOOTER==========================
 	.modal-content {
 		cursor: default;
 		text-align: center;
-		width: 60%;
+		width: 80%;
 		margin: 0px auto;
 		img {
+			display: block;
 			width: 100%;
-			float: left;
 
 			@include at-breakpoint($medium) {
+				float: left;
 				width: 60%;
+				@include animation(clip-back 0.3s ease-out forwards);
 			}
 			@include transform(translate(0px, -4vw));
 
-			@include animation(clip-back 0.3s ease-out forwards)
 		}
 		.close-button {
 			position: fixed;
 			height: 100px;
 			width: 100px;
-			top: -50px;
+			top: -100px;
 			right: 0;
 			cursor: pointer;
+			visibility: hidden;
+			@include at-breakpoint($medium) {
+				visibility: visible;
+			}
 			@include transform(rotateZ(45deg));
 			&:before {
 				content: "";
@@ -553,10 +570,11 @@ footer { //=====================================FOOTER==========================
 			}
 		}
 		.modal-text {
+			display: block;
 			width: 100%;
-			float: right;
 
 			@include at-breakpoint($medium) {
+				float: right;
 				width: 35%;
 			}
 			span {
@@ -565,33 +583,34 @@ footer { //=====================================FOOTER==========================
 			}
 			.modal-date {
 				font-family: $font-secondary;
-				font-weight: 100;
+				font-weight: 500;
 				color: $lightblue;
-				margin-bottom: 40px;
-				font-size: 100px;
+				padding-top: 12px;
+				margin-bottom: 14px;
+				font-size: 2.4rem;
 
-				padding-top: 30px;
 				border-top: solid 1px $lightgray;
 
 				@include at-breakpoint($medium) {
-				font-size: 9vw;
-				margin-bottom: 4vw;
-				text-align: right;
+					font-size: 9vw;
+					font-weight: 300;
+					margin-bottom: 4vw;
+					text-align: center;
 
-				border-top-width: 0;
-				padding-top: 0;
+					border-top-width: 0;
+					padding-top: 0;
 				}
 			}
 			.modal-name {
 				border-top: solid 1px $lightgray;
 				border-bottom: solid 1px $lightgray;
-				padding-top: 10px;
-				padding-bottom: 10px;
+				padding-top: 8px;
+				padding-bottom: 8px;
 				font-size: 20px;
 				@include at-breakpoint($medium) {
-				padding-top: 1vw;
-				padding-bottom: 1vw;
-				font-size: 2vw;
+					padding-top: 1vw;
+					padding-bottom: 1vw;
+					font-size: 2vw;
 				}
 			}
 			.modal-visit {
@@ -610,14 +629,24 @@ footer { //=====================================FOOTER==========================
 				} //hover
 			} //.modal-visit
 		} //.modal-text
+		.modal-description {
+			padding-top: 10px;
+			font-size: 1rem;
+			line-height: 24px;
+			@include at-breakpoint($large) {
+				font-size: 1.3rem;
+			}
+		}
 	} //.modal-content
 	&.visible {
-		img {
-			-webkit-clip-path: polygon(0 0, 95% 11%, 100% 91%, 16% 100%); clip-path: polygon(0 0, 95% 11%, 100% 91%, 16% 100%);
-		}
-		img:hover{
-			//@include transform(translate(0px, -80px));
-			@include animation(clip-go 0.3s ease-out forwards)
+		@include at-breakpoint($medium) {
+			img {
+					-webkit-clip-path: polygon(0 0, 95% 11%, 100% 91%, 16% 100%); clip-path: polygon(0 0, 95% 11%, 100% 91%, 16% 100%);
+			}
+			img:hover{
+				//@include transform(translate(0px, -80px));
+				@include animation(clip-go 0.3s ease-out forwards)
+			}
 		}
 	}
 } //.modal
