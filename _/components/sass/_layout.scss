@@ -20,6 +20,7 @@ $large : 75em;
 	display: none;
 	text-shadow: 1px 1px #000;
 	font-weight: bold;
+	padding: 5px 4px 3px 2px;
 
 	@include at-breakpoint($small) {
 		width: 100%;
@@ -42,6 +43,7 @@ $large : 75em;
 		box-shadow: 1px 1px 2px rgba(255,255,255,0.2)
 	}
 	&.scrolled{
+		padding-top: 0;
 		margin-top: 0;
 		top: 0;
 		//background: rgba(255,255,255,0.1);
@@ -355,7 +357,7 @@ $large : 75em;
 	padding-bottom: 100px;
 	@include transition(all 0.3s ease-out);
 	@include at-breakpoint($small) {
-		height: 1800px;
+		height: 2200px;
 	} //.line
 	.line {
 		position: absolute;
@@ -365,7 +367,7 @@ $large : 75em;
 		background-color: $lightgray;
 		@include at-breakpoint($small) {
 			left: 50%;
-			height: 1400px;
+			height: 1850px;
 		} //.line
 
 		.point {
@@ -388,26 +390,30 @@ $large : 75em;
 				margin-left: -75px;
 				margin-top: 200px;
 				font-size: 2.4rem;
-				padding-top: 55px;
+				padding-top: 60px;
 			} //small
 
 			&.first {
 				margin-top: 0px;
-				@include background($white image-url('rutgers-logo.jpg') no-repeat center);
-				background-size: 90%;
+				@include background($white image-url('osfe.jpg') no-repeat center);
+				background-size: 100%;
 			} //.first
 			&:nth-child(2) {
-				@include background(#0269d4 image-url('columbia-logo.jpg') no-repeat center);
+				@include background($white image-url('paypal-logo.png') no-repeat center);
 				background-size: 90%;
 			}
 			&:nth-child(3) {
-				@include background($white image-url('redshift-logo.png') no-repeat center);
+				@include background($white image-url('swift-logo.png') no-repeat center);
 				background-size: 100%;
 			}
 			&:nth-child(4) {
-				@include background($white image-url('fdu-logo.jpg') no-repeat center);
-				background-size: 90%;
-			} //:nth-child(4)
+				@include background($white image-url('rutgers-logo.jpg') no-repeat center);
+				background-size: 100%;
+			}
+			&:nth-child(5) {
+				@include background($white image-url('columbia-logo.jpg') no-repeat center);
+				background-size: 100%;
+			}
 		} //.point
 	} //.line
 
